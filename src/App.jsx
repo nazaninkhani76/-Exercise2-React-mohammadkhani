@@ -1,14 +1,22 @@
-import { useState } from 'react'
-
+import { useState } from "react";
 
 function App() {
-  const [inputvalue, setInputvalue] = useState('')
-
+  const [inputvalue, setInputvalue] = useState('');
+  const handleInputChange = (e) => {
+    setInputvalue(e.target.value);
+  };
   return (
-   <div>
-
-   </div>
-  )
+    <div className="container">
+      <input
+        type="text"
+        value={inputvalue}
+        onChange={handleInputChange}
+        placeholder="type..."
+      />
+      <p>Character Count: {inputvalue.length}</p>
+   
+    </div>
+  );
 }
 
-export default App
+export default App;
